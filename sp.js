@@ -119,6 +119,8 @@ const showWinner = (winner, pattern) => {
         boxes[index].style.backgroundColor = "#50ad94"; // Make winning boxes darker
     });
     disableBoxes();
+    // Hide the reset button
+    const buttons = document.querySelectorAll(".reset-btn"); buttons.forEach(button => { button.style.display = "none"; });
     gameOver = true;
 };
 
