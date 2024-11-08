@@ -18,6 +18,7 @@ body {
 }
 
 .game {
+	padding-bottom: 35px;
 	height: 60vmin;
 	width: 60vmin;
 	display: flex;
@@ -336,7 +337,10 @@ h5 {
 }
 /* For Index page |down onward| */
 .gamemode {
-	color: #0e8aa0;
+	position: absolute;
+	top: 60%;
+	left: 45.25%;
+	color: #0e4a55;
 	font-size: 3vmin;
 	transition: ease 0.3s;
 }
@@ -346,12 +350,15 @@ h5 {
 	transform: scale(1.25);
 }
 #modebtn{
+	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 #spbtn {
-	position: relative;
-	top: 0px;
-	left: -125px;
+	margin: 2.5%;
+	position: absolute;
+	top: 700px;
+	left:30.5%;
 	background-color: #4077c9;
 	color: #000e4e;
 	opacity: 1;
@@ -359,7 +366,7 @@ h5 {
 	font-weight: 800;
 	border-radius: 3px;
 	padding: 10px 20px;
-	cursor: pointer;
+	cursor:pointer;
 	box-shadow: 5px 2px 4px rgba(0, 0, 0, 0.7);
 	transition: all 0.2s linear;
 	font-size: 13px;
@@ -375,9 +382,10 @@ h5 {
 	font-weight: 900;
 }
 #mpbtn {
-	position: relative;
-	top: 0px;
-	left: 75px;
+	margin: 2.5%;
+	position: absolute;
+	top: 700px;
+	right: 30.5%;
 	background-color: #4077c9;
 	color: #000e4e;
 	opacity: 1;
@@ -411,6 +419,27 @@ h5 {
 		color: #002b5c;
 		font-size: 7.5vmin;
 		transition: ease 0.3s;
+	}
+		#spbtn {
+		justify-self:center ;
+		position: fixed;
+		width: 250px;
+		top: 70%;
+	}
+	#mpbtn {
+		justify-self:center ;
+		position: fixed;
+		width: 250px;
+		top: 77%;
+	}
+	.gamemode {
+		position: relative;
+        top: -109px;
+        font-size: 32px;
+        margin: 10px;
+        padding: 20px;
+        left: 19px;
+    
 	}
 
 	.ttt {
@@ -509,7 +538,7 @@ h5 {
 		align-items: center;
 	}
 	.reset-btn{
-		margin-top: 90px;
+		margin-top: 9%;
 	}
 }
 @media only screen and (max-width: 915px) {
@@ -665,7 +694,7 @@ h5 {
 		transition: ease 0.3s;
 	}
 .reset-btn{
-	margin-top: 250px;
+	margin-top: 0px;
 }
 	.ttt {
 		color: #155bac;
@@ -758,8 +787,9 @@ h5 {
 		transition: ease 0.3s;
 	}
 .reset-btn{
+	padding: none;
 	position: sticky;
-	bottom: 1%;
+	bottom: 20%;
 }
 	.ttt {
 		margin: 20px 20px;
@@ -888,6 +918,11 @@ h5 {
 	}
 }
 @media only screen and (max-width: 435px) {
+	.msg2{
+		position: relative;
+		top: 300px;
+		font-size: 20px;
+	}
 	.ttt {
 		margin: 20px 20px;
 		font-size: 12vmin;
@@ -921,28 +956,33 @@ h5 {
 		font-size: 4vmin;
 	}
 	#credit {
-		bottom: 0.2%;
+		bottom:7%;
 		left: 6.75%;
 		right: 4%;
 	}
 	.gamemode {
 		position: fixed;
-		top: 64%;
-		left: 36.5%;
-		font-size: 20px;
+		top: 59.9%;
+		left: 21.2%;
+		font-size: 30px;
 	}
 	#spbtn {
 		position: fixed;
 		width: 250px;
 		top: 70%;
 		left: 17.5%;
+		padding: 14px;
+		font-size: 20px;
 	}
 	#mpbtn {
 		position: fixed;
 		width: 250px;
-		top: 77%;
-		left: 17.5%;
+		top: 78%;
+		left: 34%;
+		padding: 14px;
+		font-size: 20px;
 	}
 	.help{
 		display: none;
+}
 }
