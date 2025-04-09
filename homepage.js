@@ -95,6 +95,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Pong game development message
+document.querySelector('.pongbtn')?.addEventListener('click', (event) => {
+    event.preventDefault();
+    alert('This game is still in Development! Might take a month or two');
+});
+
+document.getElementById('notavailablemsg')?.addEventListener('click', (event) => {
+    event.preventDefault();
+    alert('This game is still in Development! Might take a month or two');
+});
+
 // Game navigation handlers
 document.getElementById('tttgs')?.addEventListener('click', () => {
     showLoadingOnNavigation();
