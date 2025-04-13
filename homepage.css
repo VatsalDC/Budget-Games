@@ -8,10 +8,10 @@
 /* Theme variables */
 :root {
     --bg-color: #ffffff;
-    --text-color: #333;
-    --card-bg: #bebebe;
+    --text-color: #fffece;
+    --card-bg: #f0fff0f1;
     --card-border: rgba(0,0,0,0.125);
-    --heading-color: #333;
+    --heading-color: #333333;
     --muted-text: #6c757d;
     --nav-bg: #212529;
     --nav-text: #fff;
@@ -20,13 +20,13 @@
 
 [data-theme="dark"] {
     --bg-color: #131313;
-    --text-color: #e0e0e0;
-    --card-bg: #353535;
-    --card-border: rgb(136, 136, 136);
-    --heading-color: #ffffff;
-    --muted-text: #b0b0b0;
+    --text-color: #e7fde5;
+    --card-bg: #4b4d53;
+    --card-border: rgb(5, 0, 54);
+    --heading-color: #dddddd;
+    --muted-text: #ebffe7b0;
     --nav-bg: #1a1a1a;
-    --nav-text: #fff;
+    --nav-text: #ffffff;
     --hover-bg: #414141;
 }
 
@@ -39,10 +39,18 @@ body {
     padding: 0;
     margin: 0;
     transition: all 0.3s ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
     color: var(--heading-color);
+}
+
+/* Add text-muted override for dark mode */
+.text-muted {
+    color: var(--muted-text) !important;
 }
 
 h1{
@@ -52,7 +60,7 @@ h1{
     text-align: center;
     transition: ease 0.3s;
     &:hover{
-        color: #031304;
+        color: #c7ffcb;
     }
 }
 
@@ -131,7 +139,7 @@ main {
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    background-color: var(--card-bg);
+    flex: 1;
 }
 
 main h2 {
@@ -323,6 +331,35 @@ a{
     margin: 0 auto;
 }
 
+/* Sliding text animation */
+.sliding-text {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.sliding-text span {
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(90deg, 
+        #1f7e56 0%,
+        #148fa5 var(--x, 0%),
+        var(--heading-color) var(--x, 0%),
+        var(--heading-color) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+    transition: --x 0.1s ease;
+}
+
+.sliding-text:hover span {
+    background-position: 0 0;
+}
+
 /* Mobile Sidebar Styles */
 .mobile-sidebar {
     position: fixed;
@@ -388,7 +425,8 @@ footer {
     color: var(--text-color);
     text-align: center;
     padding: 1rem 0;
-    margin-top: 2rem;
+    width: 100%;
+    border-top: 1px solid var(--card-border);
 }
 
 footer p {
@@ -454,14 +492,7 @@ input:checked + .slider:before {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    /* other rules */
-    .navbar-toggler:focus {
-        box-shadow: none;
-    }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 768px){
     header h1 {
         font-size: 2rem;
     }
