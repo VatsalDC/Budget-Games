@@ -5,20 +5,49 @@
     box-sizing: border-box;
 }
 
-/* Body Styling */
+/* Theme variables */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333;
+    --card-bg: #bebebe;
+    --card-border: rgba(0,0,0,0.125);
+    --heading-color: #333;
+    --muted-text: #6c757d;
+    --nav-bg: #212529;
+    --nav-text: #fff;
+    --hover-bg: #444444;
+}
+
+[data-theme="dark"] {
+    --bg-color: #131313;
+    --text-color: #e0e0e0;
+    --card-bg: #353535;
+    --card-border: rgb(136, 136, 136);
+    --heading-color: #ffffff;
+    --muted-text: #b0b0b0;
+    --nav-bg: #1a1a1a;
+    --nav-text: #fff;
+    --hover-bg: #414141;
+}
+
+/* Apply theme colors */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #09070f;
+    color: var(--text-color);
+    background-color: var(--bg-color);
     padding: 0;
     margin: 0;
+    transition: all 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
 }
 
 h1{
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #333;
     position: relative;
     text-align: center;
     transition: ease 0.3s;
@@ -29,8 +58,8 @@ h1{
 
 /* Header Styling */
 header {
-    background: #4CAF50;
-    color: #fff;
+    background: var(--bg-color);
+    color: var(--text-color);
     padding: 1rem 0;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -45,11 +74,11 @@ header h1 {
 nav {
     display: flex;
     justify-content: center;
-    background: #333;
+    background: var(--nav-bg);
 }
 
 nav a {
-    color: #fff;
+    color: var(--nav-text);
     text-decoration: none;
     padding: 0.75rem 1.5rem;
     display: block;
@@ -65,30 +94,32 @@ nav a {
     position: absolute;
     top: 0;
     height: 100%;
-    background: #070d0e;
+    background: var(--hover-bg);
     transition: all 0.3s ease;
     z-index: 1;
     pointer-events: none;
     opacity: 0;
-    border-radius: 13px;
-    box-shadow: inset 2px -2px 6px 0.5px rgba(0,0,0,1);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .tttgs, .ponggs {
     position: relative;
-    color: white;
+    color: var(--nav-text);
     text-decoration: none;
     padding: 0.75rem 1.5rem;
     z-index: 2;
+    transition: all 0.3s ease;
 }
 
 .tttgs:hover, .ponggs:hover {
-    color: white;
+    color: var(--nav-text);
 }
 
 .tttgs i, .ponggs i, .tttgs span, .ponggs span {
     position: relative;
     z-index: 2;
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
@@ -100,15 +131,18 @@ main {
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    background-color: var(--card-bg);
 }
 
 main h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    color: var(--heading-color);
 }
 
 main p {
     margin-bottom: 1.5rem;
+    color: var(--text-color);
 }
 
 table{
@@ -117,15 +151,19 @@ table{
     text-align: center;
     transition: ease 0.3s;
     gap: 0px;
+    border-color: var(--card-border);
 }
+
 td{
     transition: ease 0.3s;
+    border-color: var(--card-border);
 }
 #gameselection{
     justify-self: center;
     width: 75%;
     overflow: hidden;
     border-radius: 30px;
+    border-color: var(--card-border);
 }
 
 tr{
@@ -136,24 +174,99 @@ tr{
 }
 a{
     text-decoration: none;
-    color: #333;
+    color: var(--text-color);
 }
 
 /* cursor style on buttons(a)*/
 .pongbtn{
-    background-color: #2e3136;
-    border: none;
+    background-color: #4CAF50 !important;
+    border: none !important;
+    opacity: 0.7;
     
     &:hover{
-        cursor:not-allowed;
-        background-color: #421922;
+        cursor: not-allowed;
+        background-color: #45a049 !important;
+        opacity: 0.7;
+        transform: none !important;
     }
 }
 
-
 .tttbtn{
-    background-color: #0d6efe;
-    border: none;
+    background-color: #4CAF50 !important;
+    border: none !important;
+}
+
+/* Card styling */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    color: var(--heading-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    color: var(--muted-text);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+/* Button styling */
+.btn-primary {
+    background: linear-gradient(145deg, #4CAF50, #45a049) !important;
+    border: none !important;
+    padding: 0.8rem 1.5rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+    background: linear-gradient(145deg, #45a049, #409444) !important;
+}
+
+.pongbtn {
+    background: linear-gradient(145deg, #4CAF50, #45a049) !important;
+    opacity: 0.7 !important;
+    box-shadow: none !important;
+}
+
+.pongbtn:hover {
+    cursor: not-allowed !important;
+    transform: none !important;
+    box-shadow: none !important;
+    opacity: 0.7 !important;
+}
+
+/* Play button styling */
+.btn-primary {
+    background-color: #4CAF50 !important;
+    border: none !important;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #45a049 !important;
+    transform: translateY(-2px);
 }
 
 /* Loading Screen Styles */
@@ -163,7 +276,7 @@ a{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #ffffff;
+    background-color: var(--bg-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -173,6 +286,12 @@ a{
 
 .loading-content {
     text-align: center;
+    color: var(--text-color);
+}
+
+.loading-content h4 {
+    color: var(--heading-color);
+    margin-top: 1rem;
 }
 
 .loading-spinner {
@@ -189,6 +308,21 @@ a{
     100% { transform: rotate(360deg); }
 }
 
+/* Welcome section */
+.display-4 {
+    color: var(--heading-color);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.lead.text-muted {
+    color: var(--muted-text) !important;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 /* Mobile Sidebar Styles */
 .mobile-sidebar {
     position: fixed;
@@ -196,7 +330,7 @@ a{
     left: -250px;
     width: 250px;
     height: 100vh;
-    background-color: #212529;
+    background-color: var(--nav-bg);
     z-index: 1050;
     transition: left 0.3s ease-in-out;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
@@ -208,11 +342,11 @@ a{
 
 .sidebar-header {
     padding: 1rem;
-    background-color: #1a1e21;
+    background-color: var(--nav-bg);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
+    color: var(--nav-text);
 }
 
 .sidebar-content {
@@ -222,14 +356,14 @@ a{
 .sidebar-item {
     display: block;
     padding: 0.75rem 1rem;
-    color: white;
+    color: var(--nav-text);
     text-decoration: none;
     transition: background-color 0.2s;
 }
 
 .sidebar-item:hover {
-    background-color: #2c3237;
-    color: white;
+    background-color: var(--hover-bg);
+    color: var(--nav-text);
 }
 
 /* Overlay when sidebar is open */
@@ -250,8 +384,8 @@ a{
 
 /* Footer Styling */
 footer {
-    background: #333;
-    color: #fff;
+    background: var(--bg-color);
+    color: var(--text-color);
     text-align: center;
     padding: 1rem 0;
     margin-top: 2rem;
@@ -260,6 +394,63 @@ footer {
 footer p {
     margin: 0;
     font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+/* Theme Switch styling */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 24px;
+    position: relative;
+    width: 48px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.4s;
+}
+
+.slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 16px;
+    left: 4px;
+    position: absolute;
+    transition: 0.4s;
+    width: 16px;
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
 }
 
 /* Responsive Design */
