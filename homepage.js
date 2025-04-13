@@ -82,6 +82,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Navigation highlight effect
 document.addEventListener('DOMContentLoaded', function() {
+    // Sliding text effect
+    const slidingText = document.querySelector('.sliding-text');
+    if (slidingText) {
+        const textSpan = slidingText.querySelector('span');
+        
+        slidingText.addEventListener('mousemove', (e) => {
+            const rect = textSpan.getBoundingClientRect();
+            // Only process if cursor is within the text bounds
+            if (e.clientX >= rect.left && e.clientX <= rect.right) {
+                const x = e.clientX - rect.left; // Get cursor position relative to span
+                const percent = (x / rect.width) * 100;
+                textSpan.style.setProperty('--x', `${percent}%`);
+            }
+        });
+
+        slidingText.addEventListener('mouseleave', () => {
+            textSpan.style.setProperty('--x', '0%');
+        });
+
+        // Reset when cursor enters from outside
+        slidingText.addEventListener('mouseenter', (e) => {
+            const rect = textSpan.getBoundingClientRect();
+            if (e.clientX < rect.left) {
+                textSpan.style.setProperty('--x', '0%');
+            } else if (e.clientX > rect.right) {
+                textSpan.style.setProperty('--x', '100%');
+            }
+        });
+    }
+
     const navContainer = document.querySelector('.d-lg-flex');
     if (!navContainer) return;
 
