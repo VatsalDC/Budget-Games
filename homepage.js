@@ -1,3 +1,27 @@
+// Theme switcher
+const themeSwitch = document.getElementById('themeSwitch');
+const body = document.body;
+
+// Check for saved theme preference
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme) {
+    body.setAttribute('data-theme', currentTheme);
+    if (currentTheme === 'dark') {
+        themeSwitch.checked = true;
+    }
+}
+
+// Handle theme switch
+themeSwitch.addEventListener('change', function() {
+    if (this.checked) {
+        body.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        body.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+    }
+});
+
 // Loading screen handler
 window.addEventListener('load', () => {
     // Hide loading screen after page is fully loaded
