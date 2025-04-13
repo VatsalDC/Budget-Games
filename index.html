@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budget Games - Classic Games Collection</title>
-    <!-- Bootstrap bundle (CSS) -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- my CSS -->
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="homepage.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -21,7 +21,7 @@
         </div>
     </div>
 
-    <!-- Mobile nav_Sidebar -->
+    <!-- Mobile Sidebar -->
     <div class="mobile-sidebar d-lg-none" id="mobileSidebar">
         <div class="sidebar-header">
             <h5 class="mb-0">Games Menu</h5>
@@ -31,7 +31,7 @@
             <a href="tictactoe/tictactoe.html" class="sidebar-item">
                 <i class="fas fa-hashtag me-2"></i>Tic Tac Toe
             </a>
-            <a href="pong_game/pong.html" class="sidebar-item">
+            <a href="#" class="sidebar-item" id="notavailablemsg">
                 <i class="fas fa-gamepad me-2"></i>Pong Game
             </a>
         </div>
@@ -45,11 +45,19 @@
             <a class="navbar-brand" href="#">
                 <i class="fas fa-gamepad me-2"></i>Budget Games
             </a>
+            <div class="theme-switch-wrapper ms-auto me-3">
+                <i class="fas fa-sun me-2"></i>
+                <label class="theme-switch">
+                    <input type="checkbox" id="themeSwitch">
+                    <span class="slider round"></span>
+                </label>
+                <i class="fas fa-moon ms-2"></i>
+            </div>
             <div class="d-none d-lg-flex">
                 <a class="tttgs" href="tictactoe/tictactoe.html">
                     <i class="fas fa-gamepad me-2"></i>Tic Tac Toe
                 </a>
-                <a class="ponggs" href="#">
+                <a class="ponggs" href="#" id="notavailablemsg">
                     <i class="fas fa-gamepad me-2"></i>Pong Game
                 </a>
             </div>
@@ -66,7 +74,7 @@
         </div>
 
         <div class="row g-4 justify-content-center">
-            <!-- tictactoe game Card -->
+            <!-- Tic Tac Toe Card -->
             <div class="col-md-6 col-lg-4">
                 <div class="card h-100 shadow-sm hover-effect">
                     <img src="tictactoe/tictactoe.png" class="card-img-top p-3" alt="Tic Tac Toe">
@@ -80,7 +88,7 @@
                 </div>
             </div>
 
-            <!-- Pong game Card -->
+            <!-- Pong Game Card -->
             <div class="col-md-6 col-lg-4">
                 <div class="card h-100 shadow-sm hover-effect">
                     <img src="pong_game/pong.png" class="card-img-top p-3" alt="Pong Game">
@@ -104,13 +112,13 @@
 
     <footer class="bg-dark text-light py-4 mt-5">
         <div class="container text-center">
-            <p class="mb-0">© 2025 Budget Games. All rights reserved.</p>
+            <p class="mb-0"> 2025 Budget Games. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Bootstrap Bundle(js) -->
+    <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- my JS -->
+    <!-- Custom JS -->
     <script src="homepage.js"></script>
 </body>
 </html>
