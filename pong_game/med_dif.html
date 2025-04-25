@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pong Game</title>
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+	</head>
+	<body>
+		<button id="startButton" style="border-radius: 50">Start Game</button>
+		<button id="pauseButton" onclick="change_Text">Pause Game</button>
+		<button id="Restart Game With More Speed">Restart Game</button>
+		<audio id="paddleHitSound" src="paddle_hit.mp3" preload="auto"></audio>
+
+		<div id="scoreboard">
+			<div>
+				YOU:
+				<p>
+					<span id="player1Score">&nbsp;&nbsp;&nbsp;&nbsp;0</span>
+				</p>
+			</div>
+
+			<div>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AI:
+				<p>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<span id="player2Score">&nbsp;&nbsp;&nbsp;&nbsp;0</span>
+				</p>
+			</div>
+		</div>
+		<div id="countdown">Game Starts in; &nbsp;0</div>
+		<canvas id="gameCanvas" width="800" height="400"></canvas>
+		<script src="pongext.js"></script>
+		<button id="quitButton">Quit Game</button>
+	</body>
+</html>

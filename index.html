@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Games - Classic Games Collection</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="homepage.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="BG.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner mb-3"></div>
+            <h4>Loading Budget Games...</h4>
+        </div>
+    </div>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar d-lg-none" id="mobileSidebar">
+        <div class="sidebar-header">
+            <h5 class="mb-0">Games Menu</h5>
+            <button type="button" class="btn-close btn-close-white" id="closeSidebar" aria-label="Close"></button>
+        </div>
+        <div class="sidebar-content">
+            <a href="tictactoe/tictactoe.html" class="sidebar-item">
+                <i class="fas fa-hashtag me-2"></i>Tic Tac Toe
+            </a>
+            <a href="#" class="sidebar-item" id="notavailablemsg">
+                <i class="fas fa-gamepad me-2"></i>Pong Game
+            </a>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <button class="navbar-toggler d-lg-none" type="button" id="sidebarToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-gamepad me-2"></i>Budget Games
+            </a>
+            <div class="theme-switch-wrapper ms-auto me-3">
+                <i class="fas fa-sun me-2"></i>
+                <label class="theme-switch">
+                    <input type="checkbox" id="themeSwitch">
+                    <span class="slider round"></span>
+                </label>
+                <i class="fas fa-moon ms-2"></i>
+            </div>
+            <div class="d-none d-lg-flex">
+                <a class="tttgs" href="tictactoe/tictactoe.html">
+                    <i class="fas fa-gamepad me-2"></i>Tic Tac Toe
+                </a>
+                <a class="ponggs" href="#" id="notavailablemsg">
+                    <i class="fas fa-gamepad me-2"></i>Pong Game
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="text-center mb-5">
+            <h1 class="display-4 mb-3 sliding-text" data-text="Welcome To Budget Games">
+                <span>Welcome To Budget Games</span>
+            </h1>
+            <p class="lead text-muted">
+                Rediscover the joy of classic gaming with our collection of simple yet engaging games.
+                <br>Perfect for quick fun and nostalgic entertainment!
+            </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <!-- Tic Tac Toe Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm hover-effect">
+                    <img src="tictactoe/tictactoe.png" class="card-img-top p-3" alt="Tic Tac Toe">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Tic Tac Toe</h3>
+                        <p class="card-text">Challenge your friends in this classic game of X's and O's!</p>
+                        <a href ="tictactoe/tictactoe.html" class="btn btn-primary tictacbtn">
+                            <i class="fas fa-play me-2"></i>Play Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pong Game Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm hover-effect">
+                    <img src="pong_game/pong.png" class="card-img-top p-3" alt="Pong Game">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Pong Game</h3>
+                        <p class="card-text">Experience the original arcade classic that started it all!</p>
+                        <a href="#" class="btn btn-primary pongbtn" title="Still in Development">
+                            <i class="fas fa-play me-2"></i>Play Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <p class="text-muted">
+                <i class="fas fa-plus-circle me-2"></i>More exciting games coming soon!
+            </p>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0"> 2025 Budget Games. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="homepage.js"></script>
+</body>
+</html>
