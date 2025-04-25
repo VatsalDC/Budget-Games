@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Unavailable - Budget Games</title>
+    <link rel="stylesheet" href="homepage.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .unavailable-container {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #09070f;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .unavailable-message {
+            font-size: 1.5rem;
+            margin-bottom: 32px;
+            max-width: 90vw;
+        }
+        .back-btn {
+            padding: 12px 32px;
+            background: #1a1a2e;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+        .back-btn:hover {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="unavailable-container">
+        <div class="unavailable-message">
+            <b style="color: #aacbfd;">WE ARE SORRY!</b>
+            <br>
+            Unable to load game as it might be under development or has been paused temporarily.
+        </div>
+        <button class="back-btn" onclick="window.location.href='index.html'">Back to Home</button>
+    </div>
+</body>
+</html>
