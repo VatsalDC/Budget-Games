@@ -20,20 +20,26 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<h1 class="ttt"><b id="b">Tic</b> <b id="b">Tac</b> <b id="b">Toe</b></h1>
-		<div style="margin: 20px 0;">
-			<div class="gamemode" style="font-family: cursive;">Choose Your Opponent</div>
-		
-			<div id="modebtn">
-				<center class="btns">
-					<button id="spbtn" class="game-button" onclick="window.location='sp.htm'">
-						Computer
-					</button>
-					<button id="mpbtn" class="game-button" onclick="window.location='multiplayer.html'">
-						Multiplayer
-					</button>
-		    	</center>
-			</div>
-		</div>
-	</body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner mb-3"></div>
+            <h4 id="loading-text">Loading...</h4>
+        </div>
+    </div>
+		<header class="ttt-header">
+  <a id="bghome" href="/index.html" aria-label="Home">
+    <img src="home-agreement.png" width="28" height="28" alt="Home">
+  </a>
+  <h1 class="ttt-title">Tic Tac Toe</h1>
+</header>
+<main class="ttt-main">
+  <h2 class="gamemode">Choose Your Opponent</h2>
+  <div class="mode-btns">
+    <button id="spbtn" class="game-button" onclick="window.location='sp.htm'">Computer</button>
+    <button id="mpbtn" class="game-button" onclick="window.location='multiplayer.html'">Multiplayer</button>
+  </div>
+</main>
+	    <script src="/loading.js"></script>
+</body>
 </html>
