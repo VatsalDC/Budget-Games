@@ -383,7 +383,7 @@ a{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--nav-text);
+    color: #dddddd;
 }
 
 .sidebar-content {
