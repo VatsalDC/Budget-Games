@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<!-- 
+This HTML document represents the main page for Budget Games, a collection of classic games. 
+It includes Bootstrap for styling and responsiveness, Font Awesome for icons, and custom CSS for additional styles. 
+The page features a loading screen, a mobile sidebar for navigation, and a responsive navbar with theme switching functionality. 
+The main content showcases a welcome message and cards for individual games, such as Tic Tac Toe, with links to play them. 
+An announcement indicates more games will be added in the future. 
+The footer provides copyright information. JavaScript files are included for interactivity.
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,19 +42,20 @@
     <!-- Mobile Sidebar -->
     <div class="mobile-sidebar d-lg-none" id="mobileSidebar">
         <div class="sidebar-header">
-           <h5 id="sidebar-header">Games Menu</h5>
+            <h5 id="sidebar-header">Games Menu</h5>
             <button type="button" class="btn-close btn-close-white" id="closeSidebar" aria-label="Close"></button>
         </div>
         <div class="sidebar-content">
             <a href="tictactoe/tictactoe.html" class="sidebar-item">
                 <i class="fas fa-hashtag me-2"></i>Tic Tac Toe
             </a>
-<!--             <a href="#" class="sidebar-item" id="notavailablemsg">
+            <!-- <a href="#" class="sidebar-item" id="notavailablemsg">
                 <i class="fas fa-gamepad me-2"></i>Pong Game
             </a> -->
         </div>
     </div>
 
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <button class="navbar-toggler d-lg-none" type="button" id="sidebarToggle">
@@ -67,7 +76,7 @@
                 <a class="tttgs" href="tictactoe/tictactoe.html">
                     <i class="fas fa-gamepad me-2"></i>Tic Tac Toe
                 </a>
-<!--                 <a class="ponggs" href="#" id="notavailablemsg">
+                <!-- <a class="ponggs" href="#" id="notavailablemsg">
                     <i class="fas fa-gamepad me-2"></i>Pong Game
                 </a> -->
             </div>
@@ -86,7 +95,7 @@
         </div>
 
         <div class="row g-4 justify-content-center">
-            <!-- Tic Tac Toe Card -->
+                                                            <!-- Tic Tac Toe Card -->
             <div class="col-md-6 col-lg-4">
                 <div class="card h-100 shadow-sm hover-effect">
                     <img src="tictactoe/tictactoe.png" class="card-img-top p-3" alt="Tic Tac Toe">
@@ -100,7 +109,7 @@
                 </div>
             </div>
 
-<!--                                                                 (Pong Game Card)
+<!--                                                                  (Pong Game Card)
             <div class="col-md-6 col-lg-4">
                 <div class="card h-100 shadow-sm hover-effect">
                     <img src="pong_game/pong.png" class="card-img-top p-3" alt="Pong Game">
@@ -113,7 +122,8 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
+ -->
 
         <div class="text-center mt-5">
             <p class="text-muted">
