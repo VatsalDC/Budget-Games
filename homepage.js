@@ -192,3 +192,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Create custom cursor
+const cursor = document.createElement('div');
+cursor.className = 'custom-cursor';
+document.body.appendChild(cursor);
+
+// Move cursor with mouse
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+});
+
+// Hide cursor when mouse leaves window
+document.addEventListener('mouseleave', () => {
+    cursor.style.opacity = '0';
+});
+
+// Show cursor when mouse enters window
+document.addEventListener('mouseenter', () => {
+    cursor.style.opacity = '1';
+});
