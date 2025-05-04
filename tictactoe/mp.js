@@ -6,6 +6,7 @@ let msg = document.querySelector(".msg");
 
 let turnO = true; //playerX, playerO
 let count = 0; //To Track Draw
+let gameOver = false;
 
 const winPatterns = [
 	[0, 1, 2],
@@ -25,13 +26,21 @@ const resetGame = () => {
     enableBoxes();
     msgContainer.classList.add("hide");
     boxes.forEach(box => box.style.backgroundColor = ""); // Reset box colors
+    // Show the reset button
+    resetBtn.style.display = "block";
+    
+    // Remove pattern popup and button if they exist
+    const popup = document.querySelector('.pattern-popup');
+    const showPatternBtn = document.querySelector('.show-pattern-btn');
+    if (popup) popup.remove();
+    if (showPatternBtn) showPatternBtn.remove();
 };
 
 boxes.forEach((box) => {
 	box.addEventListener("click", () => {
 		if (turnO) {
 			//playerO
-			box.innerText = "𝓞";
+			box.innerText = "𝑶";
 			turnO = false;
 		} else {
 			//playerX
@@ -61,10 +70,13 @@ function deftext() {
 }
 
 const gameDraw = () => {
-	msg.innerText = `TIED! 
+	msg.innerText = `TIED!
 	 This Game was a Draw!!`;
 	msgContainer.classList.remove("hide");
 	disableBoxes();
+	// Hide the reset button
+	resetBtn.style.display = "none";
+	gameOver = true;
 };
 
 const disableBoxes = () => {
@@ -81,14 +93,15 @@ const enableBoxes = () => {
 };
 
 const showWinner = (winner, pattern) => {
-    msg.innerText = `Congratulations, Winner is ${winner}`;
+    msg.innerText = `Congratulations,
+	 Winner is ${winner}`;
     msgContainer.classList.remove("hide");
     pattern.forEach(index => {
         boxes[index].style.backgroundColor = "#50cd94"; // Make winning boxes darker
     });
     disableBoxes();
-	   // Hide the reset button
-    const buttons = document.querySelectorAll(".reset-btn"); buttons.forEach(button => { button.style.display = "none"; });
+    // Hide the reset button
+    resetBtn.style.display = "none";
     gameOver = true;
 };
 

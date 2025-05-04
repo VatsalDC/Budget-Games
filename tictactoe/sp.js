@@ -26,6 +26,14 @@ const resetGame = () => {
     enableBoxes();
     msgContainer.classList.add("hide");
     boxes.forEach(box => box.style.backgroundColor = ""); // Reset box colors
+    // Show the reset button
+    resetBtn.style.display = "block";
+    
+    // Remove pattern popup and button if they exist
+    const popup = document.querySelector('.pattern-popup');
+    const showPatternBtn = document.querySelector('.show-pattern-btn');
+    if (popup) popup.remove();
+    if (showPatternBtn) showPatternBtn.remove();
 };
 
 const aiMove = () => {
@@ -54,9 +62,9 @@ const findBestMove = () => {
     // Check if AI needs to block player
     for (let pattern of winPatterns) {
         let [a, b, c] = pattern;
-        if (boxes[a].innerText === "𝓞" && boxes[b].innerText === "𝓞" && boxes[c].innerText === "") return c;
-        if (boxes[a].innerText === "𝓞" && boxes[c].innerText === "𝓞" && boxes[b].innerText === "") return b;
-        if (boxes[b].innerText === "𝓞" && boxes[c].innerText === "𝓞" && boxes[a].innerText === "") return a;
+        if (boxes[a].innerText === "𝑶" && boxes[b].innerText === "𝑶" && boxes[c].innerText === "") return c;
+        if (boxes[a].innerText === "𝑶" && boxes[c].innerText === "𝑶" && boxes[b].innerText === "") return b;
+        if (boxes[b].innerText === "𝑶" && boxes[c].innerText === "𝑶" && boxes[a].innerText === "") return a;
     }
     // Otherwise, pick a random available box
     let availableBoxes = Array.from(boxes).filter((box) => !box.disabled);
@@ -69,7 +77,7 @@ const findBestMove = () => {
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
         if (turnO && !gameOver) {
-            box.innerText = "𝓞";
+            box.innerText = "𝑶";
             turnO = false;
             box.disabled = true;
             count++;
@@ -91,11 +99,25 @@ function deftext() {
     document.getElementById("help").innerHTML = "?";
 }
 
+const showWinner = (winner, pattern) => {
+    msg.innerText = `Congratulations, Winner is ${winner}`;
+    msgContainer.classList.remove("hide");
+    pattern.forEach(index => {
+        boxes[index].style.backgroundColor = "#50cd94"; // Make winning boxes darker
+    });
+    disableBoxes();
+    // Hide the reset button
+    resetBtn.style.display = "none";
+    gameOver = true;
+};
+
 const gameDraw = () => {
     msg.innerText = `TIED! 
      This Game was a Draw!!`;
     msgContainer.classList.remove("hide");
     disableBoxes();
+    // Hide the reset button
+    resetBtn.style.display = "none";
     gameOver = true;
 };
 
@@ -110,18 +132,6 @@ const enableBoxes = () => {
         box.disabled = false;
         box.innerText = "";
     }
-};
-
-const showWinner = (winner, pattern) => {
-    msg.innerText = `Congratulations, Winner is ${winner}`;
-    msgContainer.classList.remove("hide");
-    pattern.forEach(index => {
-        boxes[index].style.backgroundColor = "#50cd94"; // Make winning boxes darker
-    });
-    disableBoxes();
-    // Hide the reset button
-    const buttons = document.querySelectorAll(".reset-btn"); buttons.forEach(button => { button.style.display = "none"; });
-    gameOver = true; 
 };
 
 const checkWinner = () => {

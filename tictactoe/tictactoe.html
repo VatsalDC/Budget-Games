@@ -37,10 +37,53 @@
 <main class="ttt-main">
   <h2 class="gamemode">Choose Your Opponent</h2>
   <div class="mode-btns">
-    <button id="spbtn" class="game-button" onclick="window.location='sp.htm'">Computer</button>
-    <button id="mpbtn" class="game-button" onclick="window.location='multiplayer.html'">Multiplayer</button>
+    <button id="spbtn" class="game-button" onclick="window.location='sp.htm'">
+      <span class="button-text">Computer</span>
+      <div class="hover-effect"></div>
+    </button>
+    <button id="mpbtn" class="game-button" onclick="window.location='multiplayer.html'">
+      <span class="button-text">Multiplayer</span>
+      <div class="hover-effect"></div>
+    </button>
   </div>
 </main>
 	    <script src="/loading.js"></script>
-</body>
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				const buttons = document.querySelectorAll('.game-button');
+				
+				buttons.forEach(button => {
+					button.addEventListener('mousemove', function(e) {
+						const rect = this.getBoundingClientRect();
+						const x = e.clientX - rect.left;
+						
+						const effect = this.querySelector('.hover-effect');
+						effect.style.setProperty('--x', x + 'px');
+					});
+				});
+			});
+		</script>
+		<script>
+			// Create custom cursor
+			const cursor = document.createElement('div');
+			cursor.className = 'custom-cursor';
+			document.body.appendChild(cursor);
+
+			// Move cursor with mouse
+			document.addEventListener('mousemove', (e) => {
+				cursor.style.left = e.clientX + 'px';
+				cursor.style.top = e.clientY + 'px';
+			});
+
+			// Hide cursor when mouse leaves window
+			document.addEventListener('mouseleave', () => {
+				cursor.style.opacity = '0';
+			});
+
+			// Show cursor when mouse enters window
+			document.addEventListener('mouseenter', () => {
+				cursor.style.opacity = '1';
+			});
+		</script>
+	</body>
 </html>

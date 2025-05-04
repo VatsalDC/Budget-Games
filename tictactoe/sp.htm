@@ -19,6 +19,9 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
+		<a href="tictactoe.html" id="bghome">
+			<img src="home-agreement.png" alt="Home" width="30" height="30">
+		</a>
 		<div class="msg-container hide">
 			<p class="msg">winner</p>
 			<p class="msg2">Scroll down to see the win pattern</p>
@@ -52,15 +55,28 @@
 			</button>
 		</main>
 
-		<button
-			id="help"
-			class="help"
-			onclick="hideshow()"
-			onmouseover="changetext()"
-			onmouseout="deftext()"
-		>
-			?
-		</button>
 		<script src="sp.js"></script>
+		<script>
+			// Create custom cursor
+			const cursor = document.createElement('div');
+			cursor.className = 'custom-cursor';
+			document.body.appendChild(cursor);
+
+			// Move cursor with mouse
+			document.addEventListener('mousemove', (e) => {
+				cursor.style.left = e.clientX + 'px';
+				cursor.style.top = e.clientY + 'px';
+			});
+
+			// Hide cursor when mouse leaves window
+			document.addEventListener('mouseleave', () => {
+				cursor.style.opacity = '0';
+			});
+
+			// Show cursor when mouse enters window
+			document.addEventListener('mouseenter', () => {
+				cursor.style.opacity = '1';
+			});
+		</script>
 	</body>
 </html>
