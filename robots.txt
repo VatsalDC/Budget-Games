@@ -1,12 +1,8 @@
 User-agent: *
 Allow: /
-Allow: /tictactoe/
-Allow: /sitemap.xml
 
 Sitemap: https://budgetgames.netlify.app/sitemap.xml
 
-# Disallow crawling of any hidden directories or files
-Disallow: /.*/
+# Optional: Prevent access to hidden system files or specific formats
 Disallow: /*.php$
-Disallow: /*.js$
-Disallow: /*.css$ 
+Disallow: /*.exe$
