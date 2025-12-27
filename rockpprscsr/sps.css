@@ -1,0 +1,22 @@
+.spsbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+}
+
+#rockimg{
+    width: 300px;
+    height: 300px;
+    cursor: pointer;
+}
+#pprimg{
+    width: 325px;
+    height: 300px;
+    cursor: pointer;
+}
+#ssrimg{
+    width: 300px;
+    height: 300px;
+    cursor: pointer;
+}
