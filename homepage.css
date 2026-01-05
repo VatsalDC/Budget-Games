@@ -42,7 +42,6 @@ body {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	cursor: none;
 }
 
 h1,
@@ -352,7 +351,6 @@ a {
 	justify-content: center;
 	gap: 0.5rem;
 	position: relative;
-	cursor: none;
 }
 
 .sliding-text span {
@@ -542,36 +540,3 @@ input:checked + .slider:before {
 	}
 }
 
-/* Hide cursor on all interactive elements */
-button, a, input, select, textarea, [role="button"], [tabindex] {
-	cursor: none !important;
-}
-
-@media (min-width: 601px) {
-	.custom-cursor {
-		position: fixed;
-		width: 30px;
-		height: 30px;
-		background-color: white;
-		border-radius: 50%;
-		pointer-events: none;
-		mix-blend-mode: difference;
-		transform: translate(-50%, -50%);
-		z-index: 2147483647; /* Maximum z-index value */
-		will-change: transform;
-	}
-}
-
-@media (max-width: 600px) {
-	body {
-		cursor: auto;
-	}
-	
-	button, a, input, select, textarea, [role="button"], [tabindex] {
-		cursor: pointer !important;
-	}
-	
-	.custom-cursor {
-		display: none;
-	}
-}
